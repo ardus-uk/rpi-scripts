@@ -1,0 +1,25 @@
+#!/bin/bash
+# will stop a vncserver numbered 1-9
+# Usage        stopvnc <number> or, simply, stopvnc
+# If no argument is supplied, will stop vnc number 1
+
+if [ $# -eq 0 ]
+then
+	echo "No vncserver/desktop specified so I will assume :1"
+	KILL=1
+	vncserver -kill :1
+else
+	re='^[1-9]+$'
+	if ! [[ $1 =~ $re ]]
+	then
+		echo "error: $1 is not a number"
+		exit 1
+	fi
+	echo "Killing vncserver/desktop :$1"
+	KILL=$1
+	vncserver -kill :$1
+fi
+if [ $? -eq 0 ]
+then
+	echo "VNC Server/Desktop :$KILL has been stopped"
+fi
