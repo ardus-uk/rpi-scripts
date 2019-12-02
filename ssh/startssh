@@ -1,3 +1,4 @@
 #!/bin/bash
+#this is so that I don't have to keep typing the password
 eval `ssh-agent` > /dev/null
 ssh-add
