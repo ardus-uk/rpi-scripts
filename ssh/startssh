@@ -1,5 +1,3 @@
 #!/bin/bash
-# this is so that I don't have to keep on typing the password
-# I only have to do it once, at the start of the session
-eval `ssh-agent` > /dev/null
+eval `ssh-agent`
 ssh-add
