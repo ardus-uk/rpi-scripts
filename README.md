@@ -12,3 +12,6 @@ Simple scripts for the Raspberry Pi
 - upd - standard update
 - distupd - distribution update
 - autoclean - remove unwanted packages
+
+**OTHER**
+### get crosswords from The Guardian
