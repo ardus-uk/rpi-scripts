@@ -23,9 +23,9 @@ else
   echo "Mounting encrypted drive..."
   encfs $encdir $mount
   if [ $? -eq 0 ]; then
-    echo "success."
+    echo "Success."
   else
-    echo "fail."
+    echo "Fail to mount drive."
   fi
   
 fi
