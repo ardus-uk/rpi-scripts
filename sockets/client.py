@@ -1,8 +1,9 @@
 import socket
-# Mark's Pi server is 31.125.90.16
-# Polho dxantix server is 80.229.141.232
+# Mark's Pi server is 31.125.90.16, port 4472
+# Polho dxantix server is 80.229.141.232, port 4472
+# Polho u3apeter server is 80.229.141.232, port 4473
 HOST = '80.229.141.232'
-PORT = 4472
+PORT = 4473
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((HOST, PORT))
     input_prompt = 'Message text (leave blank to end the program) '
