@@ -1,9 +1,18 @@
 import socket
-# Mark's Pi server is 31.125.90.16, port 4472
-# Polho dxantix server is 80.229.141.232, port 4472
-# Polho u3apeter server is 80.229.141.232, port 4473
-HOST = '80.229.141.232'
-PORT = 4473
+import json
+import os
+
+script_directory = os.path.dirname(os.path.abspath(__file__))
+jcf = os.path.join(script_directory, "servers.json")
+with open(jcf) as json_credentials_file:
+    credentials = json.load(json_credentials_file)
+
+# Choose a server - could be u3apeter, dxantix, or markpi
+server = 'u3apeter'
+
+HOST = credentials[server]['host']
+PORT = credentials[server]['port']
+
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((HOST, PORT))
     input_prompt = 'Message text (leave blank to end the program) '
